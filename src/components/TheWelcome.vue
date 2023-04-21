@@ -27,14 +27,11 @@ import ToolingIcon from './icons/IconTooling.vue'
     <template #heading>Introduce read bible project</template>
 
     <h3>About project</h3>
-    This project is an Angular-based web application that allows users to easily browse and read
-    bible verses, as well as get personalized verse recommendations based on their current mood via
-    openAI API.
+    This project is an Vue-based web application that allows users to easily browse and read bible
+    verses.
 
     <h3>Features</h3>
     1. Browse and read bible verses by book and chapter.<br />
-    2. Get personalized verse recommendations based on your current mood.<br />
-    3. Includes comprehensive unit tests to ensure code quality.<br />
   </WelcomeItem>
 </template>
 

@@ -1,0 +1,43 @@
+select {
+    background-color: #f8f9fa;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #6c757d;
+  
+    &:focus {
+      outline: none;
+      box-shadow: none;
+      border-color: #007bff;
+    }
+}
+  
+button {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  border: 2px solid #2196f3;
+  background-color: #fff;
+  color: #2196f3;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+button:hover {
+  background-color: #2196f3;
+  color: #fff;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5; 
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+} 
