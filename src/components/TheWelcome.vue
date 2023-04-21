@@ -37,3 +37,7 @@ import ToolingIcon from './icons/IconTooling.vue'
     3. Includes comprehensive unit tests to ensure code quality.<br />
   </WelcomeItem>
 </template>
+
+<script lang="ts">
+export default {}
+</script>
