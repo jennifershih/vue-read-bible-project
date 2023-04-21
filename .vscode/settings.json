@@ -17,5 +17,6 @@
   "eslint.validate": ["javascript", "typescript", "html"],
   "eslint.options": {
     "extensions": [".js", ".ts", ".html"]
-  }
+  },
+  "cSpell.words": ["axios", "Pinia"]
 }

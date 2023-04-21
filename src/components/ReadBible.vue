@@ -13,8 +13,7 @@ import axios from 'axios'
     <template #icon>
       <DocumentationIcon />
     </template>
-    <template #heading
-      >Read Bible Together
+    <template #heading>Read Bible Together
       <div>
         <select v-model="selectedBook" class="form-control">
           <option v-for="book in books" :key="book.value" :value="book">

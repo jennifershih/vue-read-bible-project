@@ -12,12 +12,8 @@ import ToolingIcon from './icons/IconTooling.vue'
     <template #heading>Resume</template>
 
     click here to see
-    <a
-      href="https://jennifer-shih.notion.site/6cf8bc38c8ae4da8ad57708b39399505"
-      target="_blank"
-      rel="noopener"
-      >my resume</a
-    >
+    <a href="https://jennifer-shih.notion.site/6cf8bc38c8ae4da8ad57708b39399505" target="_blank" rel="noopener">my
+      resume</a>
   </WelcomeItem>
 
   <WelcomeItem>
