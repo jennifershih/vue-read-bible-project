@@ -2,6 +2,7 @@
   "name": "vue-read-bible-project",
   "version": "0.0.0",
   "private": true,
+  "homepage": "https://jennifershih.github.io/vue-read-bible-project",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check build-only",
