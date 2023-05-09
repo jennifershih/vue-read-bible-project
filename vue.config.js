@@ -1,6 +1,7 @@
 import module from './module'
 
 module.exports = {
+  publicPath: './',
   base: '/vue-read-bible-project/',
   devServer: {
     proxy: {
