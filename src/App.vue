@@ -1,85 +1,46 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/pages/HelloWorld.vue'
+import BibleReader from '@/components/BibleReader.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Bible logo" class="logo" src="@/assets/bible.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="Hello!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/read-bible">Read Bible</RouterLink>
-      </nav>
+  <header class="header">
+    <img alt="" class="logo" src="@/assets/bible.svg" width="56" height="56" />
+    <div>
+      <h1>Read Bible Together</h1>
+      <p>一起讀聖經 · 和合本</p>
     </div>
   </header>
 
-  <RouterView />
+  <main>
+    <BibleReader />
+  </main>
+
+  <footer class="footer">
+    經文來源：<a href="https://bible-api.com" target="_blank" rel="noopener">bible-api.com</a>
+  </footer>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+h1 {
+  margin: 0;
+  font-size: 1.6rem;
 }
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+.header p {
+  margin: 0;
+  color: var(--muted);
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+.footer {
+  margin-top: 3rem;
+  font-size: 0.85rem;
+  color: var(--muted);
 }
 </style>
