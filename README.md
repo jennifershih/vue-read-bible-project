@@ -1,68 +1,57 @@
-# vue-read-bible-project
+# 📘 Read Bible Together（Vue 版）
 
-This template should help get you started developing with Vue 3 in Vite.
+[![ci](https://github.com/jennifershih/vue-read-bible-project/actions/workflows/ci.yml/badge.svg)](https://github.com/jennifershih/vue-read-bible-project/actions/workflows/ci.yml)
+[![Vue](https://img.shields.io/badge/Vue-3.5-4FC08D?logo=vuedotjs&logoColor=white)](https://vuejs.org)
+[![Live demo](https://img.shields.io/badge/demo-GitHub%20Pages-2ea44f)](https://jennifershih.github.io/vue-read-bible-project/)
 
-## Recommended IDE Setup
+Read the Bible in Chinese (Chinese Union Version, 和合本) by book and chapter. This is the Vue 3 sibling of the Angular app [read-bible](https://github.com/jennifershih/read-bible), built to compare the two frameworks.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+**[Try it →](https://jennifershih.github.io/vue-read-bible-project/)**
 
-## Type Support for `.vue` Imports in TS
+## Features
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+- Pick any of the 66 books and a chapter; verses appear with numbers.
+- Loading and error states; late responses from an earlier selection are ignored.
+- Light and dark mode follow your system setting.
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+## Built with
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+- Vue 3.5 (`<script setup>`, composables) + Vite
+- TypeScript, Vitest + Vue Test Utils, Cypress
+- ESLint (flat config) + oxlint, Prettier
+- Text from [bible-api.com](https://bible-api.com) (`translation=cuv`)
 
-## Customize configuration
+## Getting started
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+Requires Node.js 22+.
 
-## Project Setup
-
-```sh
+```bash
+git clone https://github.com/jennifershih/vue-read-bible-project.git
+cd vue-read-bible-project
 npm install
+npm run dev        # http://localhost:5173
 ```
 
-### Compile and Hot-Reload for Development
+## Scripts
 
-```sh
-npm run dev
+| Command | What it does |
+|---|---|
+| `npm run dev` | Dev server |
+| `npm run build` | Type-check and build into `dist/` |
+| `npm run test:unit` | Unit tests (Vitest) |
+| `npm run test:e2e` | End-to-end tests (Cypress) against the production build |
+| `npm run lint` | oxlint + ESLint |
+
+## Project structure
+
+```
+src
+├── App.vue                     # layout
+├── components/BibleReader.vue  # book & chapter pickers, passage
+├── composables/useBibleChapter.ts
+└── data/bible-books.ts         # 66 books: Chinese name, API name, chapters
 ```
 
-### Type-Check, Compile and Minify for Production
+## CI/CD
 
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
-
-```sh
-npm run test:e2e:dev
-```
-
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
-
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
-
-```sh
-npm run build
-npm run test:e2e
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+Lint, unit tests and the build run on every push and pull request, Cypress runs the e2e test, and `main` is published to GitHub Pages.
