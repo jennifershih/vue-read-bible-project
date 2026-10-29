@@ -29,11 +29,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - uses: cypress-io/github-action@v6
-        with:
-          build: npm run build
-          start: npm run preview
-          wait-on: 'http://127.0.0.1:4173'
+          cache: npm
+      - run: npm ci # also downloads the Cypress binary
+      - run: npm run build-only
+      - run: npm run test:e2e # preview server on 127.0.0.1:4173 + cypress run
 
   deploy:
     needs: test
