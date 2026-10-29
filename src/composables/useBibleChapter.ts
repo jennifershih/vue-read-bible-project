@@ -41,8 +41,8 @@ export function useBibleChapter() {
     loading.value = true
     error.value = false
     try {
-      const reference = encodeURIComponent(`${book.value.id} ${next}`)
-      const res = await fetch(`${API_URL}/${reference}?translation=cuv`)
+      // Chinese Union Version (和合本) from the data endpoint.
+      const res = await fetch(`${API_URL}/data/cuv/${book.value.id}/${next}`)
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
       const data = (await res.json()) as ChapterResponse
       // Ignore responses from an older selection that finished late.

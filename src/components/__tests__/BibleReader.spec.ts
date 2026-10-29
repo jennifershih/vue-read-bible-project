@@ -17,7 +17,7 @@ describe('BibleReader', () => {
 
     expect(wrapper.find('[data-test="chapter"]').attributes('disabled')).toBeDefined()
 
-    await wrapper.find('[data-test="book"]').setValue('Psalms')
+    await wrapper.find('[data-test="book"]').setValue('PSA')
     await wrapper.find('[data-test="chapter"]').setValue('23')
     await flushPromises()
 

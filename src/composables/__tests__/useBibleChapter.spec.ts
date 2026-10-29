@@ -2,7 +2,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 import { useBibleChapter } from '../useBibleChapter'
 import { BIBLE_BOOKS } from '@/data/bible-books'
 
-const john = BIBLE_BOOKS.find((b) => b.id === 'John')!
+const john = BIBLE_BOOKS.find((b) => b.id === 'JHN')!
 
 function mockFetch(body: unknown, ok = true) {
   const fn = vi
@@ -34,7 +34,7 @@ describe('useBibleChapter', () => {
     state.selectBook(john)
     await state.selectChapter(3)
 
-    expect(fetchMock).toHaveBeenCalledWith('https://bible-api.com/John%203?translation=cuv')
+    expect(fetchMock).toHaveBeenCalledWith('https://bible-api.com/data/cuv/JHN/3')
     expect(state.verses.value).toEqual([{ verse: 16, text: '神愛世人' }])
     expect(state.loading.value).toBe(false)
   })
